@@ -1,0 +1,4 @@
+.ipynb_checkpoints
+*.png
+src/.ipynb_checkpoints
+src/*.png
