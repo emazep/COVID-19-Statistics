@@ -1,0 +1,23 @@
+REGIONS_POP = {
+    "Abruzzo":                1_311_580,
+    "Basilicata":               562_869,
+    "P.A. Bolzano":             531_178,
+    "Calabria":               1_947_131,
+    "Campania":               5_801_692,
+    "Emilia-Romagna":         4_459_477,
+    "Friuli Venezia Giulia":  1_215_220,
+    "Lazio":                  5_879_082,
+    "Liguria":                1_550_640,
+    "Lombardia":             10_060_574,
+    "Marche":                 1_525_271,
+    "Molise":                   305_617,
+    "Piemonte":               4_356_406,
+    "Puglia":                 4_029_053,
+    "Sardegna":               1_639_591,
+    "Sicilia":                4_999_891,
+    "Toscana":                3_729_641,
+    "P.A. Trento":              541_098,
+    "Umbria":                   882_015,
+    "Valle d'Aosta":            125_666,
+    "Veneto":                 4_905_854
+}
