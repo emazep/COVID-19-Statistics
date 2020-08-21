@@ -1,5 +1,7 @@
 .ipynb_checkpoints
+.vscode
 *.png
 src/.ipynb_checkpoints
+src/__pycache__
 src/*.png
 output/*

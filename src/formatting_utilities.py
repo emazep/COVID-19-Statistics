@@ -7,12 +7,12 @@ from matplotlib.dates import num2date
 
 BASE_DATE = date.fromisoformat('2020-02-24')
 
-def format_date(xdate, x, p, base_date=BASE_DATE, special={}, rotate=False):
+def format_date(xdate, x, p, base_date=BASE_DATE, special={}, rotate=False, alt=False):
     xday = xdate.day
     outstr = str(xday)
     if rotate:
         outstr = ' ' + outstr
-    if (p==0 or xdate==base_date or xday==1):
+    if (p==0 or xdate==base_date or xday==1 or (alt and xday==2)):
         if rotate:
             outstr = xdate.strftime('%Y %b') + outstr
         else:
@@ -21,17 +21,23 @@ def format_date(xdate, x, p, base_date=BASE_DATE, special={}, rotate=False):
         outstr = special[p] + outstr
     return outstr
     
-def format_dates(x, p):
-    return format_date(num2date(x.item()), x, p)
+def format_dates(x, p, rotate=False, alt=False):
+    return format_date(num2date(x.item()), x, p, rotate=rotate, alt=alt)
 
-def format_dates_from_numbers(x, p, base_date=BASE_DATE, special={}, rotate=False):
-    return format_date(base_date+timedelta(days=x.item()), x, p, base_date=base_date, special=special, rotate=rotate)
+def format_dates_from_numbers(x, p, base_date=BASE_DATE, special={}, rotate=False, alt=False):
+    return format_date(base_date+timedelta(days=x.item()), x, p, base_date=base_date, special=special, rotate=rotate, alt=alt)
 
 def number2date(number: int, base_date: datetime.date = BASE_DATE) -> str:
     return (base_date+timedelta(days=number)).strftime('%d/%m/%Y')
 
 def numbers2dates(numbers: List[int], base_date: datetime.date = BASE_DATE) -> Iterable[str]:
     return map(lambda n: number2date(n, base_date), numbers)
+
+def date2number(date: datetime.date, base_date: datetime.date = BASE_DATE) -> int:
+    return (d-base_date).days
+
+def dates2numbers(dates: List[datetime.date], base_date: datetime.date = BASE_DATE) -> Iterable[int]:
+    return map(lambda d: date2number(d, base_date), dates)
 
 import matplotlib.text as mtext
 

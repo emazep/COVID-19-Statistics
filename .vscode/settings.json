@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\WPy64-382\\python-3.8.2.amd64\\python.exe"
+    "python.pythonPath": "C:\\WPy32-3820\\python-3.8.2\\python.exe",
+    "files.autoSave": "afterDelay"
 }
